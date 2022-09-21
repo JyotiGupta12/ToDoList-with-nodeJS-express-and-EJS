@@ -8,7 +8,8 @@ app.get("/", function(req, res){
     // res.write("<p>today is Sunday</p>");
     // res.write("<p>You do not need to work</p>")
     // res.send()
-    res.sendFile(__dirname+"/index.html");
+    // res.sendFile(__dirname+"/index.html");
+    res.render("index", {test:"nice day"});
 });
 
 
