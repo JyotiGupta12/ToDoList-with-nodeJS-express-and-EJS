@@ -3,6 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 const app = express()
+app.set("view engine", 'ejs');
 app.get("/", function(req, res){
     // res.write("<p>today is Sunday</p>");
     // res.write("<p>You do not need to work</p>")
