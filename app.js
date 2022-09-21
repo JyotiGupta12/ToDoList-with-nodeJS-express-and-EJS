@@ -4,7 +4,10 @@ const bodyParser = require("body-parser");
 
 const app = express()
 app.get("/", function(req, res){
-    res.send("hello world")
+    // res.write("<p>today is Sunday</p>");
+    // res.write("<p>You do not need to work</p>")
+    // res.send()
+    res.sendFile(__dirname+"/index.html");
 });
 
 
