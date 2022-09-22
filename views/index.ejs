@@ -8,19 +8,23 @@
     <link rel ="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <div class = "box" id = "heading">
     <h1><%= kindOfDay %></h1>
-    <ul>
-        <!-- <li>Buy food</li>
-        <li>Cook food</li>
-        <li>Prep for test</li> -->
-        <!-- <li><%= newListItem %></li> -->
+</div>
+<div class = "box">
+
        <% for (var i of newListItem ){%>
-            <li><%= i %></li>
+        <div class = "item">
+            <input type = "checkbox">
+            <p><%= i %></p>
+        </div>
        <% }%>
-    </ul>
-    <form class = "" action = "/" method = "post">
-        <input type = "text" name = "newItem">
-        <button type = "submit" name = "button">ADD </button>
+
+
+    <form class = "item" action = "/" method = "post">
+        <input type = "text" name = "newItem" placeholder = "Add new item" autocomplete = "off">
+        <button type = "submit" name = "button" >+</button>
     </form>
+</div>
 </body>
 </html>
