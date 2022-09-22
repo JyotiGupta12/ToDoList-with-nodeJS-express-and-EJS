@@ -5,13 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo list Project</title>
+    <link rel ="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h2><%= kindOfDay %></h2>
+    <h1><%= kindOfDay %></h1>
     <ul>
-        <li>Buy food</li>
+        <!-- <li>Buy food</li>
         <li>Cook food</li>
-        <li>Prep for test</li>
+        <li>Prep for test</li> -->
+        <!-- <li><%= newListItem %></li> -->
+       <% for (var i of newListItem ){%>
+            <li><%= i %></li>
+       <% }%>
     </ul>
     <form class = "" action = "/" method = "post">
         <input type = "text" name = "newItem">
