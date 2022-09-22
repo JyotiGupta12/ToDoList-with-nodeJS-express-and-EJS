@@ -5,11 +5,14 @@ const bodyParser = require("body-parser");
 const app = express()
 app.set("view engine", 'ejs');
 app.get("/", function(req, res){
-    // res.write("<p>today is Sunday</p>");
-    // res.write("<p>You do not need to work</p>")
-    // res.send()
-    // res.sendFile(__dirname+"/index.html");
-    res.render("index", {test:"hi"});
+    var today = new Date()
+    var options ={
+        weekday:"long",
+        day:"numeric",
+        month:"long"
+    }
+    var day = today.toLocaleDateString("en-US", options);
+    res.render("index", {kindOfDay:day});
 });
 
 
