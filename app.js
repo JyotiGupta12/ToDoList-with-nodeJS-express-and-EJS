@@ -9,7 +9,7 @@ app.get("/", function(req, res){
     // res.write("<p>You do not need to work</p>")
     // res.send()
     // res.sendFile(__dirname+"/index.html");
-    res.render("index", {test:"nice day"});
+    res.render("index", {test:"hi"});
 });
 
 
