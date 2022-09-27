@@ -8,6 +8,7 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static("public"));
 var item;
 var itemList = ["cook food", "finish dishes"]
+var workItems = ["prepare lessons"]
 app.get("/", function(req, res){
     var today = new Date()
     var options ={
@@ -16,7 +17,7 @@ app.get("/", function(req, res){
         month:"long"
     }
     var day = today.toLocaleDateString("en-US", options);
-    res.render("index", {kindOfDay:day, newListItem:itemList});
+    res.render("index", {listTitle:day, newListItem:itemList});
 });
 
 
@@ -26,6 +27,10 @@ app.post("/", function(req, res){
     itemList.push(item)
     res.redirect("/")
 
+})
+
+app.get("/work", function(req,res){
+    res.render("index", {listTitle:"Work List",newListItem:workItems})
 })
 
 
