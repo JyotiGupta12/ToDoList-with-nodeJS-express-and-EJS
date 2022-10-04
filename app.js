@@ -23,10 +23,14 @@ app.get("/", function(req, res){
 
 app.post("/", function(req, res){
     item = req.body.newItem;
-    // console.log(item);
-    itemList.push(item)
-    res.redirect("/")
-
+    console.log(req.body);
+    if (req.body.list === "Work"){
+        workItems.push(item)
+        res.redirect("/work")
+    }
+    else{itemList.push(item)
+        res.redirect("/")
+    }
 })
 
 app.get("/work", function(req,res){
